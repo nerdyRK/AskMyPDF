@@ -14,10 +14,10 @@ export default function Home() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("hah");
+    // console.log("hah");
     if (e.target.files && e.target.files[0]) {
       const validationError = validateFile(e.target.files[0], 5, ["pdf"]);
-      console.log("hah", validationError);
+      // console.log("hah", validationError);
 
       if (validationError) {
         toast.error(validationError);
@@ -84,7 +84,7 @@ export default function Home() {
               />
               <button
                 onClick={triggerFileInput}
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200"
+                className="w-full bg-blue-500 cursor-pointer hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200"
               >
                 {pdfFile ? "Change PDF" : "Select PDF"}
               </button>
@@ -99,7 +99,7 @@ export default function Home() {
               <button
                 onClick={handleUpload}
                 disabled={isLoading}
-                className={`w-full py-2 px-4 rounded transition duration-200 mb-4 ${
+                className={`w-full py-2 px-4 cursor-pointer rounded transition duration-200 mb-4 ${
                   isLoading
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-green-500 hover:bg-green-600 text-white"

@@ -24,17 +24,17 @@ const PdfViewer = ({ pdfFile }: PdfViewerProps) => {
 
   if (!pdfUrl) {
     return (
-      <div className="flex items-center justify-center h-64 bg-gray-200 rounded">
+      <div className="flex items-center justify-center h-96 bg-gray-200 rounded">
         <p className="text-gray-500">No PDF selected</p>
       </div>
     );
   }
 
   return (
-    <div className="mt-4">
+    <div className="mt-2">
       <iframe
         src={pdfUrl}
-        className="w-full h-96 border rounded"
+        className="w-full h-[60vh] border rounded"
         title="PDF Viewer"
       />
     </div>
